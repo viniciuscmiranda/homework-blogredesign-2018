@@ -1,0 +1,348 @@
+#dtqtitle p{ font-size: 32px; }
+
+#destaques{
+	border: 4px solid black;
+	width: 100%;
+	height: 420px;
+	display: flex;
+	position: relative;
+	box-sizing: border-box;
+	background: black;
+	overflow: hidden;
+	margin-bottom: 8px;
+}
+
+#destaques .destaque{
+	height: 100%;
+	min-width: 100%;
+	background-size: 100%;
+	position: absolute;
+	top: 0;
+	box-sizing: border-box;
+	overflow: hidden;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity ease-in .25s;
+}
+
+#destaques .destaque img{
+	max-width: 140%; 
+	min-width: 100%;
+	min-height: 100%;
+	left: 50%;
+	top: 15%;
+	transform: translate(-50%, -15%);
+	position: absolute;
+}
+
+#destaques .destaque article{
+	background: rgba(0,0,0,.8);
+	border-left: 4px solid black;
+	color: white;
+	width: 386px;
+	padding: 16px;
+	box-sizing: border-box;
+	position: absolute;
+	right: 0;
+	height: 100%;
+}
+
+#destaques .destaque article h2{
+	text-transform: uppercase;
+	margin-bottom: 8px;
+}
+
+#destaques .destaque article a{
+	float: right;
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 18px;
+	margin-top: 8px;
+} #destaques .destaque article a:hover{ text-decoration: underline; }
+
+#destaques .destaque .pub{
+	color: white;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 4px 12px;
+	background-color: rgba(0,0,0,.8);
+	border: solid black;
+	border-width: 0 2px 2px 0;
+}
+
+#destaques #changeimg{
+	position: absolute;
+	bottom: 24px;
+	right: calc(-386px - 110px);
+	transform: translate(-50%);
+	z-index: 1;
+	display: flex;
+	width: 80px;
+	justify-content: space-between;
+	right: 110px;
+} 
+
+#destaques input[name="dstq"]{ display: none; }
+#destaques #changeimg .radiolb{
+	width: 20px;
+	height: 20px;
+ 	padding: 2px;
+ 	box-sizing: border-box;
+ 	border: 3px solid white;
+ 	border-radius: 50%;
+ 	cursor: pointer;
+}
+
+#destaques #changeimg .radiolb div{
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background: white;
+	visibility: hidden;
+} 
+
+#destaques #showimg1:checked ~ #changeimg label[for="showimg1"] .radiolb div,
+#destaques #showimg2:checked ~ #changeimg label[for="showimg2"] .radiolb div,
+#destaques #showimg3:checked ~ #changeimg label[for="showimg3"] .radiolb div{
+	visibility: visible; }
+
+#destaques #showimg1:checked ~ #destaque1,
+#destaques #showimg2:checked ~ #destaque2,
+#destaques #showimg3:checked ~ #destaque3{ 
+	opacity: 1;
+	visibility: visible; 
+}
+
+#rcttags{
+	display: flex;
+	justify-content: space-between;
+}
+
+#recentes{ width: 526px; }
+#recentes #holder{ 
+	position: relative; 
+	height: calc(calc(258px * 3) + calc(12px * 4) + 8px);
+	box-sizing: border-box;
+}
+
+#recentes .recentecoluna { 
+	visibility: hidden;
+	position: absolute;
+	top: 0;
+	opacity: 0;
+	transition: opacity ease-in .3s;
+	width: 100%;
+} #recentes input[name="showrcnt"]:checked + .recentecoluna{ 
+	visibility: visible;
+	opacity: 1;
+}
+
+#recentes .recentecoluna .recente{
+	width: 100%;
+	border: 4px solid black;
+	height: 258px;
+	position: relative;
+	box-sizing: border-box;
+	overflow: hidden;
+	margin-bottom: 12px;
+}
+
+#recentes .recentecoluna .recente img{ 
+	width: 130%; 
+	min-height: 100%;
+	position: absolute;
+	top: 20%;
+	transform: translate(-20%, -20%);
+	transition: width ease-in .2s;
+} #recentes .recentecoluna .recente:hover img{ width: 140%; }
+
+#recentes .recentecoluna .recente article{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 50%;
+	height: 100%;
+	color: white;
+	border-left: 4px solid black;
+	background: rgba(0,0,0,.8);
+	padding: 8px 16px;
+}
+
+#recentes .recentecoluna .recente article h3{
+	text-transform: uppercase;
+	margin-bottom: 4px;
+}
+
+#recentes .recentecoluna .recente article a{
+	float: right;
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 18px;
+	margin-top: 8px;
+} #recentes .recentecoluna .recente article a:hover{ text-decoration: underline; }
+
+#recentes .recentecoluna .recente .pub{
+	color: white;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	padding: 4px 12px;
+	background-color: rgba(0,0,0,.8);
+	border: solid black;
+	border-width: 2px 2px 0 0;
+}
+
+#recentes input[name="showrcnt"]{ display: none; }
+#recentes .newrct{
+	position: absolute;
+	bottom: 0;
+	color: black;
+	font-weight: bold;
+	text-transform: uppercase;
+	cursor: pointer;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity ease-in .3s;
+} #recentes .newrct:hover{ text-decoration: underline; }
+
+#recentes .older{ right: 0; }
+#recentes .older i{
+	margin-left: 6px;
+	font-size: 18px;
+}
+
+#recentes .newer{ left: 0; } 
+#recentes .newer i{
+	margin-right: 6px;
+	font-size: 18px;
+}
+
+#recentes #showrcnt1:checked ~ label[for="showrcnt2"],
+#recentes #showrcnt2:checked ~ label[for="showrcnt1"]{ 
+	visibility: visible;
+	opacity: 1;
+}
+
+@media (max-width: 960px){
+	#dtqtitle p{ font-size: 24px; }
+
+	#destaques{
+		border: 4px solid black;
+		width: 100%;
+		height: 560px;
+		display: flex;
+		position: relative;
+		box-sizing: border-box;
+		background: black;
+		overflow: hidden;
+		margin-bottom: 8px;
+	}
+
+	#destaques #changeimg{
+		right: initial;
+		left: 16px;
+		bottom: 16px;
+		visibility: visible;
+		transform: translate(0,0);
+	}
+
+	#destaques #changeimg .radiolb{
+		width: 28px;
+		height: 28px;
+		border-width: 3px;
+		margin-right: 8px;
+	}
+
+	#destaques .destaque img{
+		max-width: 260%;
+		max-height: 260%;
+		left: 50%;
+		top: 20%;
+		transform: translate(-50%,-20%);
+	}
+
+	#destaques .destaque article{
+		right: initial;
+		bottom: 0;
+		width: 100%;
+		padding-top: 8px;
+		font-size: 15px;
+		height: auto;
+		border-left: 0;
+		border-top: 4px solid black;
+	}
+
+	#destaques .destaque article p{ margin-bottom: 8px; }
+
+	#destaques .destaque article h2{
+		margin-bottom: 2px;
+		font-size: 16px;
+	}
+	
+	#recentes{ width: 100%; }
+	#recentes .recentecoluna .recente figure{
+		position: relative;
+		height: 300px;
+		overflow: hidden;
+		border-bottom: 4px solid black;
+	}
+
+	#recentes .recentecoluna .recente img{
+		min-width: 160%;
+		width: 160%;
+		min-height: 100%;
+		top: 20%;
+		left: 50%;
+		transform: translate(-50%, -20%);
+		max-height: 500%;
+	}
+	#recentes .recentecoluna .recente article{
+		position: relative;
+		width: 100%;
+		height: auto;
+		margin: 0;
+		background: rgb(20,20,20);
+		box-sizing: border-box;
+		border: none;
+	} 
+	
+	#recentes .recentecoluna .recente article p{ 
+		margin-bottom: 32px;
+		font-size: 15px;
+	}
+	
+	#recentes .recentecoluna .recente article h3{
+		font-size: 16px;
+	}
+
+	#recentes .recentecoluna .recente article a{ 
+		position: absolute;
+		right: 16px;
+		bottom: 12px;
+	 }
+
+	#recentes .recentecoluna .recente .pub{
+		top: 0;
+		bottom: initial;
+		border-width: 0 2px 2px 0;
+	}
+
+	#recentes #holder{ 
+		position: relative; 
+		height: initial;
+		box-sizing: border-box;
+	}
+
+	#recentes .recentecoluna { 
+		visibility: visible;
+		position: initial;
+		opacity: 1;
+	} 
+
+	#recentes .recentecoluna .recente{ height: initial; }
+	#recentes .recentecoluna:last-of-type .recente:last-of-type { margin-bottom: 0; }
+	#recentes .newrct{ display: none; }
+}
